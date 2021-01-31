@@ -1,13 +1,114 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.header {
+  background-color: rgb(94, 94, 185);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.filter__icon {
+  font-size: 1.6rem;
+  line-height: 30px;
+}
+.filter__card {
+  position: absolute;
+  right: 5px;
+  top: 20px;
+  width: 20vw;
+  background-color: white;
+  border: 1px solid rgb(94, 94, 185);
+  border-radius: 10px;
+}
+.filter__card__hide {
+  display: none;
+}
+.filter {
+  margin: 20px;
+}
+.filter__options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.filter__option {
+  padding: 10px 20px 10px 20px;
+  margin: 10px;
+  border: 1px solid blue;
+  color: rgb(94, 94, 185);
+  border-radius: 10px;
+}
+.filter__option__selected {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(94, 94, 185);
+}
+.search__input {
+  height: 4vh;
+  width: 50vw;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin-left: 30px;
+  border: none;
+}
+.userdata {
+  display: flex;
+  flex-wrap: wrap;
+  height: 85vh;
+  justify-content: center;
+  margin: 0px 10vw;
+  overflow: scroll;
+}
+.user__card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 1vw 1vh;
+  border: 1px solid rgb(94, 94, 185);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .user__card {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    margin: 1vw 1vh;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .user__card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 1vw 1vh;
+  }
+}
+.card__data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.label {
+  color: rgb(94, 94, 185);
+  font-weight: bold;
+}
+.data {
+  padding: 5px;
+  color: white;
+  background-color: rgb(94, 94, 185);
+  border-radius: 5px;
 }
