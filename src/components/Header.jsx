@@ -4,7 +4,7 @@ import FilterCard from "./FilterCard";
 const Header = ({ setSearch, filterProp, optionsProp }) => {
   const { filterDisplay, displayCard } = filterProp;
   return (
-    <>
+    <div>
       <div className="header">
         <Search setSearch={setSearch} />
         <div className="filter__icon" onClick={filterDisplay}>
@@ -17,7 +17,7 @@ const Header = ({ setSearch, filterProp, optionsProp }) => {
         </div>
       </div>
       {displayCard ? null : <FilterCard optionsProp={optionsProp} />}
-    </>
+    </div>
   );
 };
 export default Header;

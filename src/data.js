@@ -1,4 +1,22 @@
 export const data = {
+  getPaymentFilter: function () {
+    const items = this.records.profiles;
+    const unique = [...new Set(items.map((item) => item.PaymentMethod))];
+    let paymentFilter = {};
+    unique.forEach((value) => {
+      paymentFilter[value] = true;
+    });
+    return paymentFilter;
+  },
+  getGenderFilter: function () {
+    const items = this.records.profiles;
+    const unique = [...new Set(items.map((item) => item.Gender))];
+    let genderFilter = {};
+    unique.forEach((value) => {
+      genderFilter[value] = true;
+    });
+    return genderFilter;
+  },
   records: {
     profiles: [
       {

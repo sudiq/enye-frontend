@@ -1,5 +1,6 @@
 import Card from "./Card";
-const Body = ({ data }) => {
+import Pages from "./Pages";
+const Body = ({ data, pageProp }) => {
   return (
     <>
       <div className="userdata">
@@ -18,6 +19,7 @@ const Body = ({ data }) => {
           )
         )}
       </div>
+      <Pages pageProp={pageProp} />
     </>
   );
 };

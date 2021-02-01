@@ -10,16 +10,10 @@ function App() {
   const [displayCard, setDisplayCard] = useState(true);
   const [profiles, setProfiles] = useState(data.records.profiles);
   const [options, setOptions] = useState({
-    gender: {
-      Male: true,
-      Female: true,
-    },
-    "payment method": {
-      cc: true,
-      paypal: true,
-      check: true,
-    },
+    gender: data.getGenderFilter(),
+    "payment method": data.getPaymentFilter(),
   });
+  const [pageNum, setPageNum] = useState(1);
 
   const updateOptions = (e) => {
     e.stopPropagation();
@@ -32,9 +26,15 @@ function App() {
         [filter_value]: !options[type][filter_value],
       },
     });
+    setPageNum(1);
+  };
+  const updatePageNum = (e) => {
+    console.log(e.target);
+    setPageNum(e.target.innerText);
   };
   const updateSearch = (e) => {
     setSearch(e.target.value.toLowerCase());
+    setPageNum(1);
   };
   const filterDisplay = () => {
     setDisplayCard(!displayCard);
@@ -56,8 +56,8 @@ function App() {
         paymentMethods.includes(profile.PaymentMethod) &&
         genders.includes(profile.Gender)
     );
-
-  console.log(displayCard);
+  const pageData = userData.slice((pageNum - 1) * 20, pageNum * 20);
+  const size = userData.length;
   return (
     <div
       onClick={() => {
@@ -72,7 +72,7 @@ function App() {
         filterProp={{ filterDisplay, displayCard }}
         optionsProp={{ options, updateOptions }}
       />
-      <Body data={userData} />
+      <Body data={pageData} pageProp={{ pageNum, updatePageNum, size }} />
     </div>
   );
 }
