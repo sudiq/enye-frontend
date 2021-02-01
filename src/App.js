@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
@@ -8,7 +8,7 @@ import { data } from "./data";
 function App() {
   const [search, setSearch] = useState("");
   const [displayCard, setDisplayCard] = useState(true);
-  const [profiles, setProfiles] = useState(data.records.profiles);
+  const profiles = data.records.profiles;
   const [options, setOptions] = useState({
     gender: data.getGenderFilter(),
     "payment method": data.getPaymentFilter(),
